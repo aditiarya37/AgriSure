@@ -10,6 +10,15 @@
     gap: 20px;
   }
   
+  .feature-subtitle {
+    color: var(--primary-light);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
   .feature-card {
     background: #fff;
     padding: 20px;
@@ -23,18 +32,19 @@
   
   .feature-icon {
     font-size: 40px;
-    color: #003cff;
-    margin-bottom: 10px;
+    color: #08A045;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   .feature-title {
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
   .feature-description {
-    font-size: 14px;
+    font-size: 17px;
     color: #666;
   }
   

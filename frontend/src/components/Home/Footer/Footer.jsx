@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -56,8 +56,16 @@ const Footer = () => {
                 placeholder="Your Email" 
                 className="newsletter-input" 
               />
-              <button type="submit" className="newsletter-button">
-                <i className="icon-paper-plane"></i>
+              <button type="submit" className="newsletter-button-f">
+                <svg 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="currentColor"
+                  style={{ transform: 'translateX(-8px)'}}
+                >
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
               </button>
             </form>
           </div>

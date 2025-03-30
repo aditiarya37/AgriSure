@@ -6,26 +6,25 @@ const progressData = [
   {
     title: "Crop Analysis",
     label: "Accurate",
-    progress: 70,
-    color: "purple",
+    progress: 90,
+    color: "green-dark", // Changed from #073B3A
   },
   {
     title: "Kissan Store",
     label: "Buy & Sale",
-    progress: 80,
-    color: "yellow",
+    progress: 85,
+    color: "green-medium", // Changed from #0B6E4F
   },
   {
     title: "Kissan Finance",
     label: "Loan & Insurance",
-    progress: 90,
-    color: "black",
+    progress: 95,
+    color: "green-light", // Changed from #08A045
   },
 ];
 
 const AboutUs = () => {
-  const [progress, setProgress] = useState(progressData.map(() => 0)); // Start with 0% progress
-
+  const [progress, setProgress] = useState(progressData.map(() => 0));
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -34,7 +33,7 @@ const AboutUs = () => {
         const { top } = sectionRef.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         if (top < windowHeight - 100) {
-          setProgress(progressData.map((item) => item.progress)); // Animate progress bars
+          setProgress(progressData.map((item) => item.progress));
         }
       }
     };

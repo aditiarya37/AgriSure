@@ -7,8 +7,8 @@ const Newsletter = () => {
       <div className="newsletter-container">
         <div className="newsletter-content">
           <div className="section-header">
-            <p className="section-subtitle">NEWSLETTER</p>
-            <h2 className="section-title">Stay Always In Touch</h2>
+            <p className="section-subtitle-ns">NEWSLETTER</p>
+            <h2 className="section-title-ns">Stay Always In Touch</h2>
           </div>
           <p className="newsletter-text">
             Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Citta erat ipsum et

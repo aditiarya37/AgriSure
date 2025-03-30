@@ -1,7 +1,16 @@
-/* Footer.css */
-.footer {
-    background-color: #04000B; /* Dark background */
-    color: #F6F4F9; /* Light text */
+:root {
+    --primary-green: #2e7d32;
+    --primary-light: #4caf50;
+    --primary-lighter: #81c784;
+    --accent-teal: #26a69a;
+    --bg-white: #ffffff;
+    --text-dark: #263238;
+    --text-light: #eceff1;
+  }
+  
+  .footer {
+    background: linear-gradient(135deg, #08A045 0%, #0c470f 100%);
+    color: var(--text-light);
     padding: 4rem 0 0;
     font-family: 'Jost', sans-serif;
   }
@@ -24,7 +33,7 @@
   }
   
   .footer-title {
-    color: #FBA504; /* Yellow accent */
+    color: #000;
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -39,7 +48,7 @@
     bottom: 0;
     width: 50px;
     height: 2px;
-    background-color: #6222CC; /* Purple accent */
+    background-color: #0c470f;
   }
   
   .footer-list {
@@ -49,21 +58,21 @@
   
   .footer-list li {
     margin-bottom: 0.8rem;
-    color: #F6F4F9;
+    color: var(--text-light);
   }
   
   .footer-list a {
-    color: #F6F4F9;
+    color: var(--text-light);
     text-decoration: none;
     transition: color 0.3s ease;
-  } 
+  }
   
   .footer-list a:hover {
-    color: #FBA504; /* Yellow on hover */
+    color: var(--primary-lighter);
   }
   
   .footer-text {
-    color: #F6F4F9;
+    color: var(--text-light);
     line-height: 1.6;
     opacity: 0.8;
     margin-bottom: 1.5rem;
@@ -76,7 +85,7 @@
   }
   
   .social-icon {
-    color: #F6F4F9;
+    color: var(--text-light);
     background-color: rgba(255, 255, 255, 0.1);
     width: 36px;
     height: 36px;
@@ -88,7 +97,7 @@
   }
   
   .social-icon:hover {
-    background-color: #6222CC; /* Purple on hover */
+    background-color: var(--accent-teal);
     color: white;
     transform: translateY(-3px);
   }
@@ -106,8 +115,9 @@
     font-size: 0.9rem;
   }
   
-  .newsletter-button {
-    background-color: #6222CC; /* Purple */
+  .newsletter-button-f {
+    background-color: black;
+    width: 40px;
     color: white;
     border: none;
     padding: 0 1.2rem;
@@ -117,7 +127,7 @@
   }
   
   .newsletter-button:hover {
-    background-color: #FBA504; /* Yellow on hover */
+    background-color: var(--primary-lighter);
   }
   
   .footer-bottom {
@@ -130,7 +140,7 @@
   }
   
   .copyright {
-    color: #F6F4F9;
+    color: var(--text-light);
     opacity: 0.8;
     font-size: 0.9rem;
   }
@@ -141,7 +151,7 @@
   }
   
   .footer-links a {
-    color: #F6F4F9;
+    color: var(--text-light);
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
@@ -160,10 +170,9 @@
   }
   
   .footer-links a:hover {
-    color: #FBA504; /* Yellow on hover */
+    color: var(--primary-lighter);
   }
   
-  /* Responsive adjustments */
   @media (max-width: 768px) {
     .footer-grid {
       grid-template-columns: repeat(2, 1fr);

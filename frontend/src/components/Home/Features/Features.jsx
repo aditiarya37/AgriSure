@@ -24,7 +24,8 @@ const featuresData = [
 
 const Features = () => {
   return (
-    <section className="features">
+    <section className="features" id="about">
+      <p className="feature-subtitle">OUR FEATURES</p>
       <div className="features-container">
         {featuresData.map((feature, index) => (
           <div key={index} className="feature-card">

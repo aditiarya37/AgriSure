@@ -1,12 +1,28 @@
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("./fonts/bootstrap-icons.woff2") format("woff2"),
+       url("./fonts/bootstrap-icons.woff") format("woff");
+}
 :root {
-    --bg-dark: #1a1a2e;
-    --bg-darker: #16213e;
-    --primary: #6a0dad;
-    --primary-light: #9c27b0;
-    --secondary: #00bcd4;
-    --text-light: #e6e6e6;
-    --text-lighter: #ffffff;
-    --text-dark: #333333;
-    --card-bg: #2a2a3a;
-    --border-color: #3a3a4a;
-  }
+  /* Primary Greens */
+  --primary-green: #2e7d32;       /* Deep green (like navbar in image) */
+  --primary-light: #4caf50;       /* Medium green */
+  --primary-lighter: #81c784;     /* Light green */
+  
+  /* Accents */
+  --accent-teal: #26a69a;         /* Teal for highlights */
+  --accent-blue: #2196f3;         /* Blue for secondary actions */
+  
+  /* Backgrounds */
+  --bg-white: #ffffff;            /* Pure white */
+  --bg-light: #f5f7f8;            /* Very light gray */
+  
+  /* Text */
+  --text-dark: #263238;           /* Dark gray for text */
+  --text-medium: #607d8b;         /* Medium gray */
+  --text-light: #eceff1;          /* Light text for dark backgrounds */
+  
+  /* Cards & Borders */
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+}

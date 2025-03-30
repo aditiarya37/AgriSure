@@ -1,62 +1,71 @@
-/* Statistics.css */
+:root {
+  --primary-green: #2e7d32;
+  --primary-light: #4caf50;
+  --primary-lighter: #81c784;
+  --accent-teal: #26a69a;
+  --bg-white: #ffffff;
+  --bg-light: #f5f7f8;
+  --text-dark: #263238;
+  --text-medium: #607d8b;
+}
+
 .statistics-container {
-    padding: 4rem 0;
-    background-color: #f8f9fa;
-  }
-  
+  padding: 4rem 0;
+  background-color: var(--bg-light);
+}
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-white);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(46, 125, 50, 0.15);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  font-weight: 500;
+}
+
+@media (max-width: 992px) {
   .statistics-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .stat-item {
-    text-align: center;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .stat-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 576px) {
+  .statistics-grid {
+    grid-template-columns: 1fr;
   }
   
   .stat-value {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #6222CC; /* Primary purple color */
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
   }
   
   .stat-label {
-    font-size: 1.1rem;
-    color: #6c757d; /* Gray color */
-    font-weight: 500;
+    font-size: 1rem;
   }
-  
-  /* Responsive design */
-  @media (max-width: 992px) {
-    .statistics-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .statistics-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .stat-value {
-      font-size: 2rem;
-    }
-    
-    .stat-label {
-      font-size: 1rem;
-    }
-  }
+}
