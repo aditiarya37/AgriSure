@@ -20,7 +20,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar dark ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <h1 className="logo">AGRI SURE</h1>
         <ul className="nav-links">

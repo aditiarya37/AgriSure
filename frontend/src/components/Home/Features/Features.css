@@ -1,7 +1,7 @@
 .features {
     text-align: center;
     padding: 50px 20px;
-    background-color: #fff;
+    background-color: #f8f9fa;
   }
   
   .features-container {
@@ -11,13 +11,14 @@
   }
   
   .feature-card {
-    background: #f8f8f8;
+    background: #fff;
     padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
     width: 400px;
     height: 300px;
     text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .feature-icon {

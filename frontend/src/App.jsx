@@ -6,6 +6,11 @@ import NavBar from "./components/NavBar/NavBar"
 import './App.css'
 import Features from './components/Home/Features/Features';
 import AboutUs from './components/Home/About Us/AboutUs';
+import Statistics from './components/Home/Statistics/Statistics';
+import Services from './components/Home/Services/Services';
+import Newsletter from './components/Home/Newsletter/Newsletter';
+import Testimonials from './components/Home/Testimonials/Testimonials';
+import Footer from './components/Home/Footer/Footer';
 
 function App() {
 
@@ -15,6 +20,11 @@ function App() {
       <Home/>
       <Features/>
       <AboutUs/>
+      <Statistics/>
+      <Services/>
+      <Newsletter/>
+      <Testimonials/>
+      <Footer/>
     </>
   )
 }

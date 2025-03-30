@@ -76,3 +76,29 @@
     color: white;
   }
   
+
+  .navbar.dark {
+    background-color: var(--bg-dark);
+  }
+  
+  .navbar.dark.scrolled {
+    background-color: var(--bg-darker);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar.dark .logo {
+    color: var(--text-lighter);
+  }
+  
+  .navbar.dark .nav-links a {
+    color: var(--text-light);
+  }
+  
+  .navbar.dark .get-started {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .navbar.dark .get-started:hover {
+    background-color: var(--primary-light);
+  }
