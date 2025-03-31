@@ -5,32 +5,32 @@ const Services = () => {
   const services = [
     {
       title: "Soil Health Analysis",
-      description: "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.",
+      description: "Analyze soil quality with precision to understand nutrient levels, improve fertility, and make informed decisions for better crop yields.  ",
       icon: "🌱"
     },
     {
       title: "Kissan Store",
-      description: "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.",
+      description: "Shop trusted seeds, fertilizers, and tools at competitive prices—your reliable marketplace for all essential farming supplies.  ",
       icon: "🛒"
     },
     {
       title: "Crop Intelligence System",
-      description: "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.",
+      description: "Leverage AI-powered crop recommendations and an intelligent assistant to optimize farming practices and boost productivity effortlessly.",
       icon: "🧠"
     },
     {
       title: "Loan Facility",
-      description: "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.",
+      description: "Secure microloans at interest rates below 7%, designed to meet your agricultural needs and support your financial growth.",
       icon: "💰"
     },
     {
-      title: "Insurance",
-      description: "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.",
+      title: "CIBIL Score Checker",
+      description: "Track your CIBIL score easily to enhance creditworthiness and unlock better financial opportunities for your farming ventures.",
       icon: "🛡️"
     },
     {
       title: "Knowledge Hub",
-      description: "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.",
+      description: "Stay updated on local government schemes, subsidies, and agricultural policies to make the most of available resources and benefits.",
       icon: "📚"
     }
   ];

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom"; // useNavigate is removed
 import { useAuth } from "/src/context/AuthContext"; // Import useAuth
 import "./SignUp.css"; // Assuming shared CSS
+// import signupImage from "/src/assets/farmer.png";
 
 // Accept onAuthSuccess as a prop
 const Login = ({ onAuthSuccess }) => {
@@ -58,51 +59,51 @@ const Login = ({ onAuthSuccess }) => {
   };
 
   return (
-    <div className="signup-container"> {/* Use login-container if specific styles exist */}
-      <div className="signup-box"> {/* Use login-box if specific styles exist */}
-        <h2>Login</h2>
-        {error && <div className="error-message">{error}</div>}
-        <form onSubmit={handleLoginSubmit}>
-          {/* Input Group: Email */}
-          <div className="input-group">
-            <span>📧</span>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={loginData.email}
-              onChange={handleChange}
-              required
-              disabled={loading} // Disable during loading
-            />
-          </div>
-          {/* Input Group: Password */}
-          <div className="input-group">
-            <span>🔒</span>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={loginData.password}
-              onChange={handleChange}
-              required
+    <div className="signup-container">
+        <div className="signup-box">
+          <h2>Login</h2>
+          {error && <div className="error-message">{error}</div>}
+          <form onSubmit={handleLoginSubmit}>
+            {/* Input Group: Email */}
+            <div className="input-group">
+              <span>📧</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={loginData.email}
+                onChange={handleChange}
+                required
+                disabled={loading} // Disable during loading
+              />
+            </div>
+            {/* Input Group: Password */}
+            <div className="input-group">
+              <span>🔒</span>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={loginData.password}
+                onChange={handleChange}
+                required
+                disabled={loading}
+              />
+            </div>
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="register-btn" // Use login-btn if specific styles exist
               disabled={loading}
-            />
-          </div>
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="register-btn" // Use login-btn if specific styles exist
-            disabled={loading}
-          >
-            {loading ? "Logging In..." : "LOGIN"}
-          </button>
-        </form>
-        {/* Signup Link */}
-        <p className="login-link">
-          Don't have an account? <Link to="/signup">Sign up here</Link>
-        </p>
-      </div>
+            >
+              {loading ? "Logging In..." : "LOGIN"}
+            </button>
+          </form>
+          {/* Signup Link */}
+          <p className="login-link">
+            Don't have an account? <Link to="/signup">Sign up here</Link>
+          </p>
+        </div>
     </div>
   );
 };

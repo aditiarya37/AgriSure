@@ -1,7 +1,7 @@
 .signup-container {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -17,6 +17,18 @@
   max-width: 400px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-comp {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.signup-image {
+  
+  margin-top: 40px;
+  filter: drop-shadow(0 00.25rem 0.35rem rgba(0,0,0,0.5));
 }
 
 .signup-box:hover {

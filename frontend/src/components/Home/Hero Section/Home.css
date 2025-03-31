@@ -15,9 +15,11 @@
   color: var(--text-light);
   padding: 100px 50px;
   display: flex;
-  margin-top: 50px;
+  /* margin-top: 30px; */
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 1700px;
   height: 100vh;
 }
 

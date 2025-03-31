@@ -1,0 +1,301 @@
+/* src/components/CropSuggestion/CropSuggestion.css */
+
+/* Define color variables if not globally available */
+:root {
+    --crop-primary: #2e7d32; /* Primary Green */
+    --crop-primary-dark: #1b5e20;
+    --crop-secondary: #66bb6a; /* Lighter Green */
+    --crop-accent: #ffb74d;    /* Orange Accent */
+    --crop-bg-light: #f7f9f7;  /* Very light grey-green */
+    --crop-bg-white: #ffffff;
+    --crop-text-dark: #333;
+    --crop-text-light: #ffffff;
+    --crop-text-medium: #555;
+    --crop-shadow-light: 0 3px 8px rgba(0, 0, 0, 0.08);
+    --crop-shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.12);
+    --crop-radius: 8px;
+  }
+  
+  body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif; /* Use a cleaner font stack */
+    background-color: var(--crop-bg-light);
+    color: var(--crop-text-dark);
+    margin: 0;
+    padding-top: 70px; /* Adjust if your NavBar height is different */
+    line-height: 1.6;
+  }
+  
+  /* Overall Container */
+  .crop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 70px); /* Account for NavBar */
+    width: 100%;
+  }
+  
+  /* Header */
+  .crop-header {
+    width: 100%;
+    background: linear-gradient(120deg, var(--crop-primary), var(--crop-primary-dark));
+    color: var(--crop-text-light);
+    text-align: center;
+    padding: 2rem 1rem; /* More padding */
+    box-shadow: var(--crop-shadow-medium);
+  }
+  
+  .crop-header h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 2.5rem; /* Slightly larger */
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .crop-header .subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+    font-weight: 300;
+  }
+  
+  /* Main Content Area */
+  .crop-content {
+    width: 90%;
+    max-width: 1100px; /* Slightly narrower max-width */
+    margin: 2.5rem auto; /* More vertical margin */
+    display: grid; /* Use grid for easier layout control */
+    grid-template-columns: 1fr; /* Default to single column */
+    gap: 2rem; /* Consistent gap */
+  }
+  
+  /* Sections (Weather & Recommendation) */
+  .crop-section {
+    background: var(--crop-bg-white);
+    padding: 1.5rem 2rem; /* Adjust padding */
+    border-radius: var(--crop-radius);
+    box-shadow: var(--crop-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--crop-primary); /* Keep accent border */
+  }
+  
+  .crop-section:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--crop-shadow-medium);
+  }
+  
+  .section-title {
+    color: var(--crop-primary-dark);
+    font-size: 1.6rem; /* Make title stand out */
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--crop-secondary); /* Use secondary color for border */
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  /* Loading Indicator Styles */
+  .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      min-height: 100px; /* Give it some space */
+  }
+  .loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--crop-primary);
+    animation: spin 1s ease-in-out infinite;
+  }
+  .loading-container p {
+      margin-top: 1rem;
+      color: var(--crop-text-medium);
+      font-style: italic;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  
+  /* Weather Data Display */
+  .weather-data-display {
+    display: grid;
+    /* Responsive grid for weather cards */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem; /* Space between cards */
+    margin-top: 1.5rem;
+  }
+  
+  .weather-card {
+    background-color: var(--crop-bg-light); /* Use light background */
+    border-radius: var(--crop-radius);
+    padding: 1rem 1.2rem;
+    text-align: left; /* Align text left */
+    border: 1px solid #e8edea; /* Softer border */
+    display: flex; /* Use flex to align icon and text */
+    align-items: center; /* Center items vertically */
+    gap: 1rem; /* Space between icon and text */
+  }
+  
+  .weather-icon {
+    font-size: 1.8rem; /* Larger icon */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+  }
+  /* Icon specific colors */
+  .weather-icon.temp { color: #e74c3c; } /* Reddish for temp */
+  .weather-icon.humidity { color: #3498db; } /* Blue for humidity */
+  .weather-icon.rainfall { color: #2980b9; } /* Darker blue for rain */
+  
+  .weather-info h3 {
+    font-size: 0.9rem;
+    color: var(--crop-text-medium);
+    margin: 0 0 0.2rem 0; /* Adjust spacing */
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .weather-info p {
+    font-size: 1.6rem; /* Larger value */
+    font-weight: 600;
+    margin: 0;
+    color: var(--crop-text-dark);
+  }
+  
+  /* Recommendation Section Specifics */
+  .recommendation-section {
+    /* Any specific styles if needed, often handled by Gemini component */
+  }
+  
+  /* Footer */
+  .crop-footer {
+    width: 100%;
+    background-color: var(--crop-text-dark);
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Pushes footer down */
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Adjustments */
+  @media (min-width: 768px) {
+    .crop-content {
+      /* Create two columns on wider screens */
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .recommendation-section {
+        /* Example: Make recommendation section span both columns if desired */
+        /* grid-column: 1 / -1; */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .crop-header h1 {
+        font-size: 1.8rem;
+    }
+    .section-title {
+        font-size: 1.3rem;
+    }
+    .crop-section {
+        padding: 1.5rem 1rem;
+    }
+    .weather-data-display {
+        grid-template-columns: 1fr; /* Stack weather cards */
+    }
+  }
+  
+  /* --- Styles inherited/used by child components (Weather, Gemini) --- */
+  /* It's better if these are in their respective CSS files, but included here */
+  /* based on your previous CSS */
+  
+  /* Buttons (General styling, override in specific components if needed) */
+  button {
+    padding: 10px 20px; /* Slightly smaller default padding */
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px; /* Match card radius */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  button:disabled {
+      background-color: #bdc3c7;
+      cursor: not-allowed;
+      opacity: 0.7;
+  }
+  
+  /* Weather Component Input Styles */
+  .weather-component { width: 100%; }
+  .weather-input-group { display: flex; gap: 10px; margin-bottom: 1rem; }
+  .weather-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: var(--crop-radius);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .weather-input:focus {
+    border-color: var(--crop-primary);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+  }
+  .weather-button { /* Button specifically in Weather component */
+    white-space: nowrap;
+    background-color: var(--crop-secondary); /* Use secondary color */
+    color: var(--crop-text-light);
+    padding: 10px 18px;
+  }
+  .weather-button:hover:not(:disabled) {
+      background-color: var(--crop-primary);
+  }
+  
+  /* Gemini Component Styles */
+  .gemini-component { width: 100%; }
+  .recommendation-controls { display: flex; justify-content: center; margin-bottom: 1.5rem; }
+  .recommendation-button { /* Button specifically in Gemini component */
+    background: linear-gradient(135deg, var(--crop-primary), var(--crop-primary-dark));
+    color: white;
+    padding: 12px 28px; /* Larger button */
+    border-radius: 50px; /* Pill shape */
+    font-weight: 600;
+    min-width: 200px;
+  }
+  .recommendation-loading { display: flex; flex-direction: column; align-items: center; padding: 20px; }
+  .recommendation-loading p { margin-top: 1rem; color: var(--crop-primary-dark); }
+  .recommendation-placeholder {
+      text-align: center; padding: 2rem; background-color: var(--crop-bg-light);
+      border-radius: var(--crop-radius); border: 1px dashed var(--crop-secondary); color: var(--crop-text-medium); margin-top: 1rem;
+  }
+  /* Styles for Gemini output content */
+  .recommendation-result { margin-top: 1rem; }
+  .recommendation-content { /* The actual text container */
+      background-color: var(--crop-bg-white); border-radius: var(--crop-radius);
+      padding: 1.5rem; box-shadow: inset 0 1px 4px rgba(0,0,0,0.04);
+      line-height: 1.7; text-align: left; border-top: 3px solid var(--crop-accent);
+  }
+  .recommendation-content h1,
+  .recommendation-content h2,
+  .recommendation-content h3 { /* Consistent heading styles */
+      color: var(--crop-primary-dark); margin: 1.5rem 0 0.8rem 0; padding-bottom: 0.4rem;
+      border-bottom: 1px solid #eee; font-weight: 600;
+  }
+  .recommendation-content h1 { font-size: 1.4rem; }
+  .recommendation-content h2 { font-size: 1.2rem; }
+  .recommendation-content h3 { font-size: 1.1rem; }
+  .recommendation-content ul, .recommendation-content ol { margin-left: 25px; margin-bottom: 1rem; }
+  .recommendation-content li { margin-bottom: 0.5rem; }
+  .recommendation-content p { margin-bottom: 1rem; }
+  .recommendation-content strong { color: var(--crop-primary-dark); font-weight: 600; }

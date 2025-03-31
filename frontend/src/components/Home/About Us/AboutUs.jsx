@@ -49,9 +49,7 @@ const AboutUs = () => {
       <div className="about-us-content">
         <h1 className="title">#1 Platform for Farmers</h1>
         <p className="description">
-          Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-          Clita erat ipsum et lorem et sit, sed stet no labore lorem sit clita duo justo
-          eirmod magna dolore erat amet.
+        Agri Sure empowers farmers with microloans under 7%, AI assistance, crop recommendations, health monitoring, and the Kissan Store—your one-stop solution for smarter farming and better harvests.
         </p>
 
         {progressData.map((item, index) => (

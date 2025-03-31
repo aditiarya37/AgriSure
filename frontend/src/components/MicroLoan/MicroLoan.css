@@ -1,0 +1,206 @@
+/* src/components/MicroLoan/MicroLoan.css */
+
+.microloan-page-container {
+    padding: 2rem;
+    max-width: 1300px;
+    margin: 1rem auto; /* Add some top margin and center */
+    background-color: #f9f9f9; /* Slightly off-white background for the page */
+    border-radius: 8px;
+    margin-top: 90px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* --- Loan Status Section --- */
+  .loan-status-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .loan-status-section h2 {
+    font-size: 1.6rem;
+    color: #2c3e50; /* Dark blue-grey */
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .loan-status-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid; /* Colored border indicates status */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
+  }
+  
+  .status-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .status-header svg {
+    font-size: 1.4rem; /* Icon size */
+  }
+  
+  .status-details p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .status-details strong {
+    color: #333;
+    margin-right: 0.5em;
+  }
+  
+  /* Status Variants */
+  .status-active {
+    border-left-color: #2ecc71; /* Green */
+  }
+  .status-active .status-header {
+    color: #27ae60;
+  }
+  .icon-active {
+    color: #2ecc71;
+  }
+  
+  .status-inactive {
+    border-left-color: #f39c12; /* Orange/Yellow */
+  }
+  .status-inactive .status-header {
+    color: #d35400;
+  }
+  .icon-inactive {
+    color: #f39c12;
+  }
+  .no-loan-message {
+      color: #7f8c8d;
+      font-style: italic;
+      text-align: center;
+      padding: 1rem 0;
+  }
+  
+  /* --- Loan Offers Section --- */
+  .loan-offers-section {
+    margin-top: 2rem;
+  }
+  
+  .loan-offers-section h2 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .offer-cards-container {
+    display: grid;
+    /* Responsive grid: 1 column on small, 2 on medium, potentially 3 on large */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; /* Space between cards */
+  }
+  
+  .loan-offer-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column; /* Arrange content vertically */
+  }
+  
+  .loan-offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .loan-offer-card h4 {
+    font-size: 1.3rem;
+    color: #1a7f5a; /* Use a theme color */
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 0.5rem;
+  }
+  
+  .offer-details {
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Allow details section to grow */
+  }
+  
+  .offer-details p {
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  .offer-details p strong {
+      color: #111;
+  }
+  
+  
+  .apply-button {
+    background-color: #1a7f5a; /* Theme green color */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    align-self: center; /* Center button horizontally */
+    margin-top: auto; /* Pushes button to the bottom */
+  }
+  
+  .apply-button:hover {
+    background-color: #146b4a; /* Darker green */
+  }
+  .apply-button:active {
+      transform: scale(0.98); /* Slight shrink on click */
+  }
+  
+  .no-offers-message {
+      text-align: center;
+      color: #7f8c8d;
+      padding: 2rem;
+      font-style: italic;
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 768px) {
+    .microloan-page-container {
+      padding: 1.5rem;
+    }
+  
+    .loan-status-section h2,
+    .loan-offers-section h2 {
+      font-size: 1.4rem;
+    }
+  
+    .offer-cards-container {
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+      .loan-status-card, .loan-offer-card {
+          padding: 1rem;
+      }
+      .loan-status-section h2,
+      .loan-offers-section h2 {
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+      }
+      .loan-offer-card h4 {
+          font-size: 1.15rem;
+      }
+      .apply-button {
+          width: 100%; /* Make button full width on small screens */
+      }
+  }

@@ -39,8 +39,7 @@ const Footer = () => {
           <div className="footer-column">
             <h3 className="footer-title">INFO</h3>
             <p className="footer-text">
-              Lorem ipsum. Exercitationem fibus molestiae dolorum nostrum aliquid lisse odit iste totam harum, 
-              adipisci his officius repellentus, corporal cumque! Facere explicabo id eum suscipit ad?
+            Agri Sure empowers farmers with microloans under 7%, AI assistance, crop recommendations, health monitoring, and the Kissan Store—your one-stop solution for smarter farming and better harvests.
             </p>
           </div>
 
@@ -48,7 +47,7 @@ const Footer = () => {
           <div className="footer-column">
             <h3 className="footer-title">NEWSLETTER</h3>
             <p className="footer-text">
-              Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisia ornare velit non vulpu
+            Join Agri Sure to access expert farming solutions, financial support, and real-time agricultural insights.
             </p>
             <form className="newsletter-form">
               <input 

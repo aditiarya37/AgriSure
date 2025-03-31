@@ -95,7 +95,7 @@ export default function ChatBot() {
       )}
 
       <button className="chat-icon" onClick={() => setIsOpen(!isOpen)}>
-        <FaRobot size={24} />
+        <FaRobot size={100} />
       </button>
     </div>
   );

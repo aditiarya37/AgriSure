@@ -6,19 +6,19 @@ const featuresData = [
     icon: "📈",
     title: "Crop Health",
     description:
-      "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.",
+      "Monitor crop health with advanced AI, IoT sensors, and satellite imagery to detect diseases, optimize resources, and ensure healthier yields through real-time insights and proactive interventions.",
   },
   {
     icon: "🌧️",
-    title: "Weather Report",
+    title: "Crop Suggestion",
     description:
-      "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.",
+      "Recommend the best crops for your farm with Agri Sure's Crop Recommendation System, powered by AI and machine learning. Tailored suggestions ensure optimal yields based on soil and environmental conditions.",
   },
   {
     icon: "💰",
     title: "Kissan Finance",
     description:
-      "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.",
+      "Kissan Finance offers farmers affordable microloans at 7% interest, with CIBIL score tracking to enhance financial health and creditworthiness.",
   },
 ];
 

@@ -11,8 +11,7 @@ const Newsletter = () => {
             <h2 className="section-title-ns">Stay Always In Touch</h2>
           </div>
           <p className="newsletter-text">
-            Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Citta erat ipsum et
-            lorem et sit sed stet lorem sit citta duo justo
+          Join Agri Sure to access expert farming solutions, financial support, and real-time agricultural insights.
           </p>
           <form className="newsletter-form">
             <input 

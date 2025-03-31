@@ -9,9 +9,7 @@ const Home = () => {
         <div className="home-text">
           <h1>Welcome to AgriSure</h1>
           <p>
-            Tempor reburn no at dolore lorem clita reburn ipsum reburn stet dolor
-            sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo
-            amet ipsum vero ipsum clita lorem.
+          AgriSure empowers farmers with microloans under 7%, AI assistance, crop recommendations, health monitoring, and the Kissan Store—your one-stop solution for smarter farming and better harvests.
           </p>
           <div className="home-buttons">
             <button className="read-more-home">Read More</button>

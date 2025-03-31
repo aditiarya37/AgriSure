@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 // --- Import Your Components ---
 
 // Common Layout/Features
-import NavBar from './components/NavBar/NavBar'; // *** Import NavBar ***
-import ChatBot from './components/ChatBot/ChatBot';
+import NavBar from './components/NavBar/NavBar'; // Ensure path is correct
+import ChatBot from './components/ChatBot/ChatBot'; // Ensure path is correct
 
 // Landing Page Sections (when logged out)
 import Home from "./components/Home/Hero Section/Home";
@@ -19,12 +19,20 @@ import Newsletter from './components/Home/Newsletter/Newsletter';
 import Testimonials from './components/Home/Testimonials/Testimonials';
 import Footer from './components/Home/Footer/Footer';
 
+// Specific Pages
+import MicroLoan from './components/MicroLoan/MicroLoan'; // Ensure path is correct
+import KissanStore from "/src/components/Kissan Store/KissanStore"; // Ensure path is correct
+import Products from "/src/components/Kissan Store/Products"; // Ensure path is correct
+import ScrollToTop from "/src/components/Kissan Store/ScrollToTop"; // Ensure path is correct
+import Bottom from "/src/components/Kissan Store/Bottom"; // Ensure path is correct
+
 // Authentication Pages
-import Login from './components/LoginSignup/Login';
-import SignUp from './components/LoginSignup/SignUp';
+import Login from './components/LoginSignup/Login'; // Ensure path is correct
+import SignUp from './components/LoginSignup/SignUp'; // Ensure path is correct
 
 // Authenticated Content
 import Dashboard from './components/Dashboard/Dashboard';
+import CropSuggestion from "./components/Crop Suggestion/CropSuggestion";
 // Import other authenticated components if needed
 // import ProfilePage from "./components/profilePage/ProfilePage";
 
@@ -67,21 +75,35 @@ const AppRoutes = () => {
     navigate("/"); // Navigate to the root (which will show Landing Page now)
   };
 
+  // --- Handler to navigate to login page ---
+  // Called when a protected action is attempted while logged out (e.g., clicking Kissan Store)
+  const handleLoginRequest = () => {
+      console.log("Login requested from NavBar.");
+      // Option 1: Navigate to login page (Current implementation)
+      navigate("/login");
+      // Option 2: If using AuthModal, trigger modal here instead
+      // setAuthModalType("login");
+      // setShowAuthModal(true);
+   };
+
   // --- Render Logic ---
 
   // Show loading indicator while checking auth status
   if (isLoadingAuth) {
-    return <div>Loading...</div>; // Replace with a proper spinner/component if desired
+    // Replace with a more visually appealing loading component if desired
+    return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>;
   }
 
   return (
     <>
       {/* Render common components outside conditional routes */}
-      {/* Pass auth state and logout handler to NavBar */}
-      {/* NavBar will use these props to decide which button to show */}
-      <NavBar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
+      {/* Pass necessary state and handlers to NavBar */}
+      <NavBar
+        isAuthenticated={isAuthenticated}
+        onLogout={handleLogout}
+        onLoginRequest={handleLoginRequest} // Pass the function to trigger login
+      />
       <ChatBot />
-
       <Routes>
         {!isAuthenticated ? (
           // --- Unauthenticated Routes ---
@@ -104,23 +126,35 @@ const AppRoutes = () => {
               }
             />
             {/* Authentication routes */}
-            {/* Pass the function to call upon successful auth */}
             <Route path="/login" element={<Login onAuthSuccess={handleAuthSuccess} />} />
             <Route path="/signup" element={<SignUp onAuthSuccess={handleAuthSuccess} />} />
 
             {/* Redirect any other paths back to landing page when logged out */}
+            {/* Kissan Store, Microloan etc. will redirect to '/' */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </>
         ) : (
           // --- Authenticated Routes ---
           <>
-            {/* Route for the dashboard */}
+            {/* Route for the dashboard (root when logged in) */}
             <Route path="/" element={<Dashboard />} />
 
+            {/* Route for MicroLoan page */}
+            <Route path="/microloan" element={<MicroLoan/>} />
+
+            {/* Route for Kissan Store (renders multiple components) */}
+            <Route path="/store" element={
+              <>
+                {/* You might want a wrapper component for store layout */}
+                <KissanStore/> {/* Main store component/layout */}
+                <Products/>   {/* Renders products within the store context */}
+                <ScrollToTop/>
+                {/* <Bottom/> */} {/* Consider placing Bottom inside KissanStore */}
+              </>
+            } />
+
             {/* Add other authenticated routes here */}
-            {/* Example: */}
-            {/* <Route path="/profile" element={<ProfilePage />} /> */}
-            {/* <Route path="/courses" element={<CoursesList />} /> */}
+            {/* Example: <Route path="/profile" element={<ProfilePage />} /> */}
 
             {/* Redirect login/signup attempts back to dashboard if already logged in */}
             <Route path="/login" element={<Navigate to="/" replace />} />
@@ -128,6 +162,7 @@ const AppRoutes = () => {
 
             {/* Redirect any other unknown paths back to dashboard when logged in */}
             <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/crop-suggest" element={<CropSuggestion/>} />
           </>
         )}
       </Routes>
