@@ -1,0 +1,143 @@
+.signup-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+.signup-box {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.signup-box h2 {
+  margin-bottom: 1.8rem;
+  color: #2d3748;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.input-group span {
+  position: absolute;
+  left: 15px;
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.signup-box input {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.signup-box input:focus {
+  border-color: #08A045;
+  box-shadow: 0 0 0 3px rgba(8, 160, 69, 0.1);
+  outline: none;
+}
+
+.signup-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #08A045;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.signup-box button:hover {
+  background-color: #065139;
+  transform: translateY(-2px);
+}
+
+.login-link {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.login-link a {
+  color: #08A045;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.login-link a:hover {
+  color: #065139;
+  text-decoration: underline;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  margin: 1.2rem 0;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.terms input {
+  width: auto;
+  margin-right: 10px;
+}
+
+.terms a {
+  color: #08A045;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .signup-box {
+    padding: 1.8rem;
+  }
+  
+  .signup-box h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.error-message {
+  color: #ff3333;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #ffeeee;
+  border-radius: 4px;
+  text-align: center;
+}

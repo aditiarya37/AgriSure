@@ -1,0 +1,59 @@
+# --- General / OS / IDE ---
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vscode/
+.idea/
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# --- Backend (Node.js) ---
+
+# Dependencies
+backend/node_modules/
+
+# Environment variables (NEVER commit these)
+backend/.env*
+# Important: Ensure backend/.env is NOT committed. Add specific ! patterns below ONLY if needed.
+# Example: If you MUST commit a template, but ignore the real one:
+# !backend/.env.example
+
+# Build output (uncomment if you compile backend, e.g., TypeScript)
+# backend/dist/
+# backend/build/
+
+# Logs (uncomment if you generate logs)
+# backend/logs/
+
+# --- Frontend (React/Vite Example) ---
+
+# Dependencies
+frontend/node_modules/
+
+# Environment variables (NEVER commit these)
+frontend/.env*
+# Important: Ensure frontend/.env is NOT committed. Add specific ! patterns below ONLY if needed.
+# Example: If you MUST commit a template, but ignore the real one:
+# !frontend/.env.example
+
+# Build output
+frontend/dist/
+frontend/build/
+
+# Coverage reports
+frontend/coverage/
+
+# Vite cache (often within node_modules, but can be explicit)
+# frontend/.vite/
+
+# Create React App specific (if applicable, less common with Vite)
+# .pnp.*
+# .yarn/plugins
+# .yarn/releases
+# .yarn/sdks
+# .yarn/versions
