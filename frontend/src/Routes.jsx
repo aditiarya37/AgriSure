@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 // Common Layout/Features
 import NavBar from './components/NavBar/NavBar'; // Ensure path is correct
 import ChatBot from './components/ChatBot/ChatBot'; // Ensure path is correct
+import Translator from './Translator'
 
 // Landing Page Sections (when logged out)
 import Home from "./components/Home/Hero Section/Home";
@@ -104,6 +105,7 @@ const AppRoutes = () => {
         onLoginRequest={handleLoginRequest} // Pass the function to trigger login
       />
       <ChatBot />
+      <Translator/>
       <Routes>
         {!isAuthenticated ? (
           // --- Unauthenticated Routes ---
