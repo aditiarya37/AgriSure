@@ -79,9 +79,6 @@ const CropSuggestion: React.FC = () => {
         </section>
       </main>
 
-      <footer className="crop-footer">
-        <p>© {new Date().getFullYear()} AgriSure | Empowering Farmers with AI</p>
-      </footer>
     </div>
   );
 };

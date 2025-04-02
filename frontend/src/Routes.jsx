@@ -34,6 +34,7 @@ import SignUp from './components/LoginSignup/SignUp'; // Ensure path is correct
 // Authenticated Content
 import Dashboard from './components/Dashboard/Dashboard';
 import CropSuggestion from "./components/Crop Suggestion/CropSuggestion";
+import GovSchemes from "./components/GovSchemes/GovSchemes";
 // Import other authenticated components if needed
 // import ProfilePage from "./components/profilePage/ProfilePage";
 
@@ -165,6 +166,7 @@ const AppRoutes = () => {
             {/* Redirect any other unknown paths back to dashboard when logged in */}
             <Route path="*" element={<Navigate to="/" replace />} />
             <Route path="/crop-suggest" element={<CropSuggestion/>} />
+            <Route path="/gov-schemes" element={<GovSchemes />} />
           </>
         )}
       </Routes>
