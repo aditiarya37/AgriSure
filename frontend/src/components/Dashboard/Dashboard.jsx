@@ -1,14 +1,14 @@
-// src/components/Dashboard/Dashboard.jsx
 import React from 'react';
 import './Dashboard.css';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate, NavLink } from 'react-router-dom';
 import {
   FaHome, FaBook, FaStore, FaRobot, FaLightbulb, FaChartLine, 
-  FaMoneyCheckAlt, FaUserCircle
+  FaMoneyCheckAlt
 } from 'react-icons/fa';
 import { IoGrid } from "react-icons/io5";
 import { MdNotificationsActive } from "react-icons/md";
+import ChatBot from '../ChatBot/ChatBot';
 
 // --- Import Card Images ---
 import loanIcon from '/src/assets/loan-icon.png';
@@ -37,13 +37,6 @@ const Dashboard = () => {
     <div className="dashboard-layout">
       {/* --- Sidebar --- */}
       <aside className="dashboard-sidebar">
-        {/* <div className="sidebar-profile">
-          <FaUserCircle className="profile-icon" />
-          <div className="profile-info">
-            <h3>{displayName}</h3>
-            <p>Farmer</p>
-          </div>
-        </div> */}
         <nav className="sidebar-nav">
           <ul>
             <li>
@@ -62,7 +55,7 @@ const Dashboard = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/ai-assistant">
+              <NavLink to="#" onClick={(e) => { e.preventDefault(); document.querySelector('.chat-icon')?.click(); }}>
                 <FaRobot className="nav-icon" /> <span>AI Assistant</span>
               </NavLink>
             </li>
@@ -82,9 +75,9 @@ const Dashboard = () => {
               </a>
             </li>
             <li>
-              <a href="https://agrisure-crop-assistance.streamlit.app/" target="_blank" rel="noopener noreferrer">
+              <NavLink to="/crop-assistance">
                 <MdNotificationsActive className="nav-icon" /> <span>Crop Assistance</span>
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -140,6 +133,9 @@ const Dashboard = () => {
           </div>
         </section>
       </main>
+
+      {/* ChatBot component with floating button */}
+      <ChatBot />
     </div>
   );
 };

@@ -11,12 +11,24 @@ interface Message {
   isUser: boolean;
 }
 
-export default function ChatBot() {
+interface ChatBotProps {
+  isOpenFromDashboard?: boolean;
+  onToggleFromDashboard?: () => void;
+}
+
+export default function ChatBot({ isOpenFromDashboard, onToggleFromDashboard }: ChatBotProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Sync with dashboard state
+  useEffect(() => {
+    if (isOpenFromDashboard !== undefined) {
+      setIsOpen(isOpenFromDashboard);
+    }
+  }, [isOpenFromDashboard]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -25,6 +37,13 @@ export default function ChatBot() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+    if (onToggleFromDashboard) {
+      onToggleFromDashboard();
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,12 +78,17 @@ export default function ChatBot() {
         <div className="chat-window">
           <div className="chat-header">
             <h3>Agri Bot</h3>
-            <button onClick={() => setIsOpen(false)}>
+            <button onClick={handleToggle}>
               <FaTimes />
             </button>
           </div>
           
           <div className="messages-container">
+            {messages.length === 0 && (
+              <div className="welcome-message">
+                <p>Hello! I'm Agri Bot. Ask me anything about farming, crops, or agriculture.</p>
+              </div>
+            )}
             {messages.map((msg, index) => (
               <div key={index} className={`message ${msg.isUser ? 'user' : 'bot'}`}>
                 {msg.isUser ? (
@@ -94,8 +118,9 @@ export default function ChatBot() {
         </div>
       )}
 
-      <button className="chat-icon" onClick={() => setIsOpen(!isOpen)}>
-        <FaRobot size={100} />
+      {/* Floating button - now synced with dashboard state */}
+      <button className="chat-icon" onClick={handleToggle}>
+        <FaRobot size={24} />
       </button>
     </div>
   );

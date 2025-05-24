@@ -20,7 +20,7 @@ body {
 /* --- Sidebar --- */
 .dashboard-sidebar {
   width: 260px;
-  background-color: #1a7f5a;
+  background: var(--scheme-primary);
   color: #e0f2ec;
   position: fixed;
   top: 0;

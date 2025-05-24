@@ -1,0 +1,338 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Stunning background with animated gradient */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    /* Updated gradient colors for a slightly richer green look */
+    background: linear-gradient(135deg, #0d5e3b, #3b8f6b, #74c69d);
+    min-height: 100vh; /* Use min-height instead of height for content overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden; /* Allow vertical scroll if content overflows */
+    color: #ffffff;
+    padding: 20px 0; /* Add some padding for smaller viewports */
+}
+
+/* Animated gradient effect */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    background-size: 300% 300%;
+    animation: gradientAnimation 12s ease infinite; /* Slightly slower animation */
+}
+
+/* Main container styling */
+.ca-container {
+    width: 90%;
+    max-width: 650px; /* Slightly wider */
+    background: rgba(0, 0, 0, 0.35); /* Slightly darker for better contrast */
+    border-radius: 20px; /* More rounded */
+    padding: 35px; /* More padding */
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Fancy heading */
+h1 {
+    font-size: 2.5rem; /* Adjusted size */
+    font-weight: 700; /* Bolder */
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Subheading styling */
+.subheading {
+    font-size: 1.1rem; /* Adjusted size */
+    margin-bottom: 30px;
+    opacity: 0.9;
+    text-align: center;
+    font-weight: 300; /* Lighter weight */
+}
+
+/* Drop Zone Styling */
+.drop-zone {
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.drop-zone p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.drop-zone .drop-zone-text-secondary {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.drop-zone.dragging {
+    border-color: #a7f3d0; /* Use a highlight color */
+    background: rgba(167, 243, 208, 0.15); /* Match highlight color */
+    transform: scale(1.03);
+}
+
+.drop-zone.has-image {
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    padding: 15px; /* Less padding when image is shown */
+}
+
+.drop-zone img {
+    max-height: 200px; /* Limit preview height */
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: contain;
+    background-color: rgba(0, 0, 0, 0.2); /* Add subtle bg for transparent images */
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px; /* Add space above buttons */
+}
+
+/* Animated button */
+button {
+    background: rgba(255, 255, 255, 0.1); /* Slightly less prominent */
+    color: white;
+    font-size: 1.1rem; /* Adjusted size */
+    padding: 12px 25px; /* Adjusted padding */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 5px 0; /* Reduced margin */
+    min-width: 200px; /* Adjusted width */
+    display: inline-flex; /* Use inline-flex for better alignment */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Slightly reduced gap */
+    backdrop-filter: blur(5px);
+    font-weight: 400;
+}
+
+button:hover:not(:disabled) { /* Only apply hover if not disabled */
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px) scale(1.03); /* Subtle lift and scale */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Specific button for browsing within drop zone */
+.browse-button {
+    background: rgba(255, 255, 255, 0.15);
+    margin-top: 10px;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    min-width: 120px;
+}
+
+.browse-button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* File input styling */
+.file-input {
+    display: none;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  /* Uses the inline SVG animation */
+   margin-right: 8px; /* Space between spinner and text */
+}
+
+/* Error Message Styling */
+.error-message {
+    background: rgba(255, 82, 82, 0.2); /* Reddish transparent background */
+    color: #ffcdd2; /* Light red text */
+    border: 1px solid rgba(255, 82, 82, 0.4);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Prediction Result Styling */
+.prediction-result {
+    background: rgba(0, 0, 0, 0.2); /* Use the highlight box style */
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left; /* Align text left within results */
+}
+
+.prediction-result h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #a7f3d0; /* Highlight color for title */
+    text-align: center; /* Center the main result heading */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 10px;
+}
+
+.prediction-item {
+    background: rgba(255, 255, 255, 0.05); /* Subtle background for each item */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.prediction-item:last-child {
+    margin-bottom: 0;
+}
+
+
+.prediction-item h4 {
+    font-size: 0.85rem; /* Smaller heading */
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+    opacity: 0.7; /* Subtler heading */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prediction-item p, .prediction-item span {
+    font-size: 1rem;
+    color: #ffffff;
+    opacity: 0.95;
+    line-height: 1.5;
+    word-wrap: break-word; /* Ensure long words wrap */
+}
+
+.prediction-item span { /* For confidence badge */
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px; /* Pill shape */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Confidence Badge Styles */
+.confidence-high {
+    background-color: rgba(74, 222, 128, 0.3); /* Green */
+    border: 1px solid rgba(74, 222, 128, 0.5);
+    color: #d1fae5;
+}
+.confidence-medium {
+    background-color: rgba(251, 191, 36, 0.3); /* Amber */
+    border: 1px solid rgba(251, 191, 36, 0.5);
+    color: #fef3c7;
+}
+.confidence-low {
+    background-color: rgba(248, 113, 113, 0.3); /* Red */
+    border: 1px solid rgba(248, 113, 113, 0.5);
+    color: #fee2e2;
+}
+.confidence-unknown {
+    background-color: rgba(156, 163, 175, 0.3); /* Gray */
+    border: 1px solid rgba(156, 163, 175, 0.5);
+    color: #e5e7eb;
+}
+
+
+/* Footer basic style if needed */
+.footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    text-align: center;
+}
+
+/* Emoji styling (if used) */
+.emoji {
+    font-size: 1.2em; /* Adjusted size */
+    vertical-align: middle; /* Align better with text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 25px;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    .subheading {
+        font-size: 1rem;
+    }
+    button {
+        min-width: 180px;
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    .drop-zone {
+        padding: 20px;
+    }
+     .prediction-result {
+        padding: 20px;
+    }
+    .prediction-item {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+     body {
+        padding: 10px 0; /* Less padding on very small screens */
+        align-items: flex-start; /* Allow scrolling */
+        min-height: 100%;
+    }
+    .app-container {
+        width: 95%;
+        padding: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+     .subheading {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    button {
+        min-width: 160px;
+        width: 100%; /* Make buttons full width */
+    }
+    .drop-zone img {
+        max-height: 150px;
+    }
+     .prediction-result h3 {
+        font-size: 1.2rem;
+    }
+     .prediction-item p, .prediction-item span {
+        font-size: 0.9rem;
+    }
+}

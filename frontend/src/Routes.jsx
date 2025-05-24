@@ -21,11 +21,7 @@ import Testimonials from './components/Home/Testimonials/Testimonials';
 import Footer from './components/Home/Footer/Footer';
 
 // Specific Pages
-import MicroLoan from './components/MicroLoan/MicroLoan'; // Ensure path is correct
-import KissanStore from "/src/components/Kissan Store/KissanStore"; // Ensure path is correct
-import Products from "/src/components/Kissan Store/Products"; // Ensure path is correct
-import ScrollToTop from "/src/components/Kissan Store/ScrollToTop"; // Ensure path is correct
-import Bottom from "/src/components/Kissan Store/Bottom"; // Ensure path is correct
+import MicroLoan from './components/MicroLoan/MicroLoan'; 
 
 // Authentication Pages
 import Login from './components/LoginSignup/Login'; // Ensure path is correct
@@ -35,6 +31,9 @@ import SignUp from './components/LoginSignup/SignUp'; // Ensure path is correct
 import Dashboard from './components/Dashboard/Dashboard';
 import CropSuggestion from "./components/Crop Suggestion/CropSuggestion";
 import GovSchemes from "./components/GovSchemes/GovSchemes";
+import KissanStore from "./components/Kissan Store/KissanStore";
+import ProductDetails from "./components/Kissan Store/ProductDetails";
+import CropAssistance from "./components/Crop Assitance/CropAssistance";
 // Import other authenticated components if needed
 // import ProfilePage from "./components/profilePage/ProfilePage";
 
@@ -145,17 +144,6 @@ const AppRoutes = () => {
             {/* Route for MicroLoan page */}
             <Route path="/microloan" element={<MicroLoan/>} />
 
-            {/* Route for Kissan Store (renders multiple components) */}
-            <Route path="/store" element={
-              <>
-                {/* You might want a wrapper component for store layout */}
-                <KissanStore/> {/* Main store component/layout */}
-                <Products/>   {/* Renders products within the store context */}
-                <ScrollToTop/>
-                {/* <Bottom/> */} {/* Consider placing Bottom inside KissanStore */}
-              </>
-            } />
-
             {/* Add other authenticated routes here */}
             {/* Example: <Route path="/profile" element={<ProfilePage />} /> */}
 
@@ -167,6 +155,9 @@ const AppRoutes = () => {
             <Route path="*" element={<Navigate to="/" replace />} />
             <Route path="/crop-suggest" element={<CropSuggestion/>} />
             <Route path="/gov-schemes" element={<GovSchemes />} />
+            <Route path="/store" element={<KissanStore />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/crop-assistance" element={<CropAssistance/>} />
           </>
         )}
       </Routes>
